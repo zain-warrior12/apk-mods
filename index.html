@@ -634,6 +634,7 @@
         <div class="tab-navigation">
             <button class="tab-btn active" data-tab="mobile">📱 Mobile Apps</button>
             <button class="tab-btn" data-tab="pc">💻 PC Software</button>
+            <button class="tab-btn" data-tab="movies">🎬 Movies</button>
         </div>
 
         <div class="search-container">
@@ -657,6 +658,12 @@
         <div class="tab-content" id="pc-content">
             <h2 class="section-title">Download PC Software</h2>
             <div class="apks-grid" id="pcGrid"></div>
+        </div>
+
+        <!-- Movies Tab Content -->
+        <div class="tab-content" id="movies-content">
+            <h2 class="section-title">Download Movies</h2>
+            <div class="apks-grid" id="moviesGrid"></div>
         </div>
     </main>
 
@@ -769,6 +776,22 @@
                 downloadUrl: 'https://www.mediafire.com/file/hvizwxekmvh5hdr/Mine-imator_2.0.0_installer.exe/file'
             },
             // Add more PC software here following the same format
+        ];
+
+        // Movies Data
+        const moviesData = [
+            {
+                name: 'MOVIES HUB',
+                iconImg: 'https://i.postimg.cc/HxtbGBGm/images-2.png',
+                iconClass: 'whatsapp',
+                status: 'Premium Unlocked',
+                downloads: '10K+',
+                size: '45MB',
+                version: '3.5',
+                rating: '4.9⭐',
+                downloadUrl: 'https://www.mediafire.com/file/g3u74aflkbpmaep/MOVIES+HUB.apk/file'
+            },
+            // Add more movies here following the same format
         ];
 
         // App data with download links and images
@@ -1091,8 +1114,59 @@
             detailsModal.style.display = 'flex';
         }
 
-        // Initialize PC Grid on page load
-        renderPCGrid();</script>
+        // Render Movies Grid
+        function renderMoviesGrid() {
+            const moviesGrid = document.getElementById('moviesGrid');
+            moviesGrid.innerHTML = '';
+
+            moviesData.forEach((movie, index) => {
+                const card = document.createElement('div');
+                card.className = 'apk-card';
+                card.innerHTML = `
+            <div class="apk-icon ${movie.iconClass}">
+                ${movie.iconImg ? `<img src="${movie.iconImg}" alt="${movie.name}">` : movie.name.charAt(0)}
+            </div>
+            <h3>${movie.name}</h3>
+            <p class="status">${movie.status}</p>
+            <div class="stats">
+                <span>${movie.downloads}</span>
+                <span>${movie.size}</span>
+            </div>
+            <button class="view-btn" onclick="showMovieDetails(${index})">View</button>
+        `;
+                moviesGrid.appendChild(card);
+            });
+        }
+
+        // Show Movie Details
+        function showMovieDetails(index) {
+            const movie = moviesData[index];
+            currentAppData = movie;
+
+            // Update modal with movie details
+            const modalIcon = document.getElementById('modalAppIcon');
+            modalIcon.className = `app-icon-large ${movie.iconClass}`;
+            modalIcon.innerHTML = movie.iconImg ?
+                `<img src="${movie.iconImg}" alt="${movie.name}">` :
+                movie.name.charAt(0);
+
+            document.getElementById('modalAppName').textContent = movie.name;
+            document.getElementById('modalAppStatus').textContent = movie.status;
+            document.getElementById('modalDownloads').textContent = movie.downloads;
+            document.getElementById('modalSize').textContent = movie.size;
+            document.getElementById('modalVersion').textContent = movie.version;
+            document.getElementById('modalRating').textContent = movie.rating;
+
+            // Update button text for movies
+            const downloadBtnText = document.getElementById('downloadBtnText');
+            downloadBtnText.textContent = 'DOWNLOAD MOVIE';
+
+            detailsModal.style.display = 'flex';
+        }
+
+        // Initialize PC Grid and Movies Grid on page load
+        renderPCGrid();
+        renderMoviesGrid();</script>
     <script src="home-script.js"></script>
 </body>
 
