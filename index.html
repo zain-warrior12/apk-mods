@@ -1,579 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAIN WARRIOR GAMER</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Change the href to point to your locally hosted image -->
-    <link rel="icon" href="favicon.png" type="image/png"> 
-    <!-- Or if you put it in an images folder: -->
-    <!-- <link rel="icon" href="/images/favicon.png" type="image/png"> -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <style>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZAIN WARRIOR GAMER</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Change the href to point to your locally hosted image -->
+<link rel="icon" href="favicon.png" type="image/png">
+<!-- Or if you put it in an images folder: -->
+<!-- <link rel="icon" href="/images/favicon.png" type="image/png"> -->
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(180deg, #1a1a3e 0%, #0a0a1a 50%, #000 100%);
-    color: #fff;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-}
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(180deg, #1a1a3e 0%, #0a0a1a 50%, #000 100%);
+        color: #fff;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+    }
 
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20% 30%, white, transparent),
-        radial-gradient(2px 2px at 60% 70%, white, transparent),
-        radial-gradient(1px 1px at 50% 50%, white, transparent),
-        radial-gradient(1px 1px at 80% 10%, white, transparent),
-        radial-gradient(2px 2px at 90% 60%, white, transparent),
-        radial-gradient(1px 1px at 33% 80%, white, transparent);
-    background-size: 200% 200%;
-    animation: twinkle 8s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-}
+    .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+            radial-gradient(2px 2px at 20% 30%, white, transparent),
+            radial-gradient(2px 2px at 60% 70%, white, transparent),
+            radial-gradient(1px 1px at 50% 50%, white, transparent),
+            radial-gradient(1px 1px at 80% 10%, white, transparent),
+            radial-gradient(2px 2px at 90% 60%, white, transparent),
+            radial-gradient(1px 1px at 33% 80%, white, transparent);
+        background-size: 200% 200%;
+        animation: twinkle 8s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
 
-@keyframes twinkle {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-}
+    @keyframes twinkle {
 
-.header {
-    text-align: center;
-    padding: 40px 20px 30px;
-    background: linear-gradient(180deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 10, 26, 0.6) 100%);
-    position: relative;
-    z-index: 1;
-}
+        0%,
+        100% {
+            opacity: 0.5;
+        }
 
-.header h1 {
-    font-size: 42px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-}
+        50% {
+            opacity: 1;
+        }
+    }
 
-.header p {
-    color: #aaa;
-    font-size: 15px;
-    margin-bottom: 25px;
-}
+    .header {
+        text-align: center;
+        padding: 40px 20px 30px;
+        background: linear-gradient(180deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 10, 26, 0.6) 100%);
+        position: relative;
+        z-index: 1;
+    }
 
-.search-container {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.search-input {
-    width: 100%;
-    padding: 14px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    color: #fff;
-    font-size: 15px;
-    outline: none;
-    transition: all 0.3s;
-}
-
-.search-input::placeholder {
-    color: #666;
-}
-
-.search-input:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(79, 172, 254, 0.5);
-}
-
-.main-content {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 35px;
-    color: #4facfe;
-}
-
-.apks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.apk-card {
-    background: rgba(20, 20, 30, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.apk-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(79, 172, 254, 0.5);
-    box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
-}
-
-.apk-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 15px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    font-weight: 700;
-    color: #fff;
-    overflow: hidden;
-}
-
-.apk-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-.movie-hub {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-    border: 3px solid #fff;
-    color: #ff0000;
-}
-
-.play-store {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-}
-
-.phone-pay {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-}
-
-.redeem {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-}
-
-.boomer {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-}
-
-.block {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-}
-
-.gpay {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
-.epfo {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-}
-
-.jalwa {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-}
-
-.youtube {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-}
-
-.instagram {
-    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-}
-
-.camera {
-    background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
-}
-
-.maps {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
-.browser {
-    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-}
-
-.calculator {
-    background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
-}
-
-.emoji {
-    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-}
-
-.apk-card h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-.status {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-around;
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.view-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    width: 100%;
-}
-
-.view-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.dot.active {
-    background: #4facfe;
-    width: 30px;
-    border-radius: 6px;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(10, 10, 26, 0.8);
-    color: #666;
-    font-size: 13px;
-    position: relative;
-    z-index: 1;
-}
-
-@media (max-width: 768px) {
     .header h1 {
-        font-size: 32px;
+        font-size: 42px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+    }
+
+    .header p {
+        color: #aaa;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .tab-navigation {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .tab-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        color: #aaa;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .tab-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(79, 172, 254, 0.5);
+    }
+
+    .tab-btn.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-color: #667eea;
+        color: #fff;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    .search-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 14px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        color: #fff;
+        font-size: 15px;
+        outline: none;
+        transition: all 0.3s;
+    }
+
+    .search-input::placeholder {
+        color: #666;
+    }
+
+    .search-input:focus {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(79, 172, 254, 0.5);
+    }
+
+    .main-content {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 35px;
+        color: #4facfe;
     }
 
     .apks-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .apk-card {
+        background: rgba(20, 20, 30, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .apk-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(79, 172, 254, 0.5);
+        box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
     }
 
     .apk-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 35px;
-    }
-}
-
-/* Modal Overlay */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    z-index: 1000;
-}
-
-/* App Details Modal */
-.details-modal-container {
-    background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
-    border-radius: 30px;
-    padding: 40px 30px;
-    max-width: 450px;
-    width: 100%;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-.app-icon-large {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
-    font-weight: 700;
-    color: #fff;
-    overflow: hidden;
-}
-
-.app-icon-large img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 25px;
-}
-
-.details-modal-container h2 {
-    font-size: 28px;
-    color: #fff;
-    margin-bottom: 8px;
-}
-
-.modal-status {
-    color: #888;
-    font-size: 15px;
-    margin-bottom: 30px;
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.detail-box {
-    background: rgba(30, 30, 30, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.detail-label {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-.detail-value {
-    color: #00d9ff;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-.download-mod-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    color: #fff;
-    padding: 18px 30px;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.download-mod-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-}
-
-/* Unlock Tasks Modal */
-.unlock-modal-container {
-    background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
-    border-radius: 30px;
-    padding: 40px 30px;
-    max-width: 500px;
-    width: 100%;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: #888;
-    font-size: 32px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.close-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
-.modal-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.modal-header h1 {
-    color: #fff;
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.modal-header p {
-    color: #999;
-    font-size: 15px;
-}
-
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.social-btn {
-    background: rgba(30, 30, 30, 0.8);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 18px 25px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.social-btn .icon {
-    font-size: 20px;
-}
-
-.social-btn:hover {
-    background: rgba(50, 50, 60, 0.8);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.social-btn.completed {
-    background: rgba(0, 255, 0, 0.15);
-    border-color: #0f0;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-}
-
-.info-text {
-    text-align: center;
-    color: #666;
-    font-size: 14px;
-    margin: 20px 0;
-}
-
-.unlock-btn {
-    background: #333;
-    border: none;
-    color: #666;
-    padding: 18px 30px;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: not-allowed;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.unlock-btn.enabled {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    cursor: pointer;
-}
-
-.unlock-btn.enabled:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-}
-
-.unlock-btn .icon {
-    font-size: 20px;
-}
-
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 32px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: 700;
+        color: #fff;
+        overflow: hidden;
     }
 
-    .apks-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    .apk-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .movie-hub {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+        border: 3px solid #fff;
+        color: #ff0000;
+    }
+
+    .play-store {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+
+    .phone-pay {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    }
+
+    .redeem {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+
+    .boomer {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    }
+
+    .block {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    }
+
+    .gpay {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+
+    .epfo {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    }
+
+    .jalwa {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+
+    .youtube {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    }
+
+    .instagram {
+        background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    }
+
+    .camera {
+        background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+    }
+
+    .maps {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+
+    .browser {
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    }
+
+    .calculator {
+        background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+    }
+
+    .emoji {
+        background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    }
+
+    .apk-card h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    .status {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 10px;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .view-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+    }
+
+    .view-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .dot.active {
+        background: #4facfe;
+        width: 30px;
+        border-radius: 6px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(10, 10, 26, 0.8);
+        color: #666;
+        font-size: 13px;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 32px;
+        }
+
+        .apks-grid {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .apk-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 35px;
+        }
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    /* App Details Modal */
+    .details-modal-container {
+        background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+        border-radius: 30px;
+        padding: 40px 30px;
+        max-width: 450px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    .app-icon-large {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        font-weight: 700;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .app-icon-large img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+
+    .details-modal-container h2 {
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 8px;
+    }
+
+    .modal-status {
+        color: #888;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
+        margin-bottom: 30px;
     }
 
-    .apk-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 35px;
+    .detail-box {
+        background: rgba(30, 30, 30, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
     }
 
-    .details-modal-container,
+    .detail-label {
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .detail-value {
+        color: #00d9ff;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .download-mod-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        color: #fff;
+        padding: 18px 30px;
+        border-radius: 15px;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .download-mod-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Unlock Tasks Modal */
     .unlock-modal-container {
-        padding: 30px 20px;
+        background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+        border-radius: 30px;
+        padding: 40px 30px;
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: #888;
+        font-size: 32px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .close-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+
+    .modal-header {
+        text-align: center;
+        margin-bottom: 30px;
     }
 
     .modal-header h1 {
-        font-size: 24px;
+        color: #fff;
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .modal-header p {
+        color: #999;
+        font-size: 15px;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
     }
 
     .social-btn {
-        padding: 15px 20px;
-        font-size: 15px;
+        background: rgba(30, 30, 30, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 18px 25px;
+        border-radius: 15px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
     }
-}</style>
+
+    .social-btn .icon {
+        font-size: 20px;
+    }
+
+    .social-btn:hover {
+        background: rgba(50, 50, 60, 0.8);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .social-btn.completed {
+        background: rgba(0, 255, 0, 0.15);
+        border-color: #0f0;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    }
+
+    .info-text {
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        margin: 20px 0;
+    }
+
+    .unlock-btn {
+        background: #333;
+        border: none;
+        color: #666;
+        padding: 18px 30px;
+        border-radius: 15px;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: not-allowed;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .unlock-btn.enabled {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .unlock-btn.enabled:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    .unlock-btn .icon {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 32px;
+        }
+
+        .apks-grid {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .apk-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 35px;
+        }
+
+        .details-modal-container,
+        .unlock-modal-container {
+            padding: 30px 20px;
+        }
+
+        .modal-header h1 {
+            font-size: 24px;
+        }
+
+        .social-btn {
+            padding: 15px 20px;
+            font-size: 15px;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -582,22 +629,34 @@ body {
     <header class="header">
         <h1>Zain Apks Hub</h1>
         <p>Download Latest Modded Apks By ZAIN WARRIOR</p>
+
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="mobile">📱 Mobile Apps</button>
+            <button class="tab-btn" data-tab="pc">💻 PC Software</button>
+        </div>
+
         <div class="search-container">
             <input type="text" placeholder="Search premium APKs..." class="search-input">
         </div>
     </header>
 
     <main class="main-content">
-        <h2 class="section-title">Download Apks</h2>
-
-        <div class="apks-grid" id="apksGrid">
-
+        <!-- Mobile Apps Tab Content -->
+        <div class="tab-content active" id="mobile-content">
+            <h2 class="section-title">Download Apks</h2>
+            <div class="apks-grid" id="apksGrid"></div>
+            <div class="pagination">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
 
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+        <!-- PC Software Tab Content -->
+        <div class="tab-content" id="pc-content">
+            <h2 class="section-title">Download PC Software</h2>
+            <div class="apks-grid" id="pcGrid"></div>
         </div>
     </main>
 
@@ -680,99 +739,131 @@ body {
             </button>
         </div>
     </div>
-<script>// App data with download links and images
-const appsData = [
-    { name: 'Movie Hub', iconImg: 'https://gcdnb.pbrd.co/images/OySCh7NsXyCt.png', iconClass: 'movie-hub', status: 'Premium Unlocked', downloads: '1K+', size: '15MB', version: '1.0', rating: '4.8⭐', downloadUrl: 'https://www.mediafire.com/file/mend2slr0qkqfnj/MOVIES_HUB.apk/file' },
-    { name: 'Play Store', iconImg: 'https://apks.urmaxx.in/file/69071fec8111dbdbc7066f6b', iconClass: 'play-store', status: 'Free', downloads: '5K+', size: '25MB', version: '2.1', rating: '4.5⭐', downloadUrl: 'https://www.mediafire.com/file/8xffaud4jb8fw0x/Play_Store.apk/file' },
-    { name: 'Phone Pay', iconImg: 'https://apks.urmaxx.in/file/69039d751fac4518f62521a5', iconClass: 'phone-pay', status: 'Free', downloads: '3K+', size: '18MB', version: '1.5', rating: '4.7⭐', downloadUrl: 'https://www.mediafire.com/file/83zo0yi2wboq1nf/%25E2%25B1%25A3%25C4%25A6%25C3%2598N%25C9%2586_%25E2%2584%2599%25E1%258E%25AA%25C9%258E.apk/file' },
-    { name: 'INFINITYREDEEM', iconImg: 'https://apks.urmaxx.in/file/68fce9154f36a5ee4317b7f9', iconClass: 'redeem', status: 'Free', downloads: '2K+', size: '12MB', version: '1.2', rating: '4.6⭐', downloadUrl: 'https://www.mediafire.com/file/ulaph2uwnoulqc3/INFINITY_REDEEM.apk/file' },
-    { name: 'ZAIN BOOMBER', iconImg: 'https://apks.urmaxx.in/file/68ed26b0d14885f522de72a9', iconClass: 'boomer', status: 'Free', downloads: '1K+', size: '10MB', version: '1.0', rating: '4.4⭐', downloadUrl: 'https://www.mediafire.com/file/9pp5l27cux9hocm/%25F0%259D%2590%258C%25F0%259D%2590%2580%25F0%259D%2590%2597%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%258E%25F0%259D%2590%258C%25F0%259D%2590%2581%25F0%259D%2590%2584%25F0%259D%2590%2591.apk/file' },
-    { name: 'Block Insta', iconImg: 'https://apks.urmaxx.in/file/68e69df850093022932b7276', iconClass: 'block', status: 'Free', downloads: '800+', size: '8MB', version: '1.1', rating: '4.3⭐', downloadUrl: 'https://www.mediafire.com/file/z717ui52snbnuvl/Block_Viewer.apk/file' },
-    { name: 'Gpay', iconImg: 'https://apks.urmaxx.in/file/68deb98550093022932af8ea', iconClass: 'gpay', status: 'Free', downloads: '4K+', size: '20MB', version: '2.0', rating: '4.8⭐', downloadUrl: 'https://www.mediafire.com/file/z3mlobkjchl06wy/GPay.apk/file' },
-    { name: 'Fampay', iconImg: 'https://apks.urmaxx.in/file/68d8fda050093022932a7c90', iconClass: 'epfo', status: 'Free', downloads: '1.5K+', size: '14MB', version: '1.3', rating: '4.5⭐', downloadUrl: 'https://www.mediafire.com/file/98nedip23s084m0/FamPay.apk/file' },
-    { name: 'Jalwa Mod', iconImg: 'https://apks.urmaxx.in/file/68d7876b50093022932a589c', iconClass: 'jalwa', status: 'Free', downloads: '2K+', size: '16MB', version: '1.4', rating: '4.6⭐', downloadUrl: 'https://www.mediafire.com/file/vms3bbg3cbathpt/JALWA_VIP_MOD.apk/file' },
-    { name: 'YouTube Lite', iconImg: 'https://apks.urmaxx.in/file/68cb0edfc5655e4f893a2dc6', iconClass: 'youtube', status: 'Free', downloads: '10K+', size: '30MB', version: '3.0', rating: '4.9⭐', downloadUrl: 'https://www.mediafire.com/file/gkz7lgapcpgqh7x/YouTube_Lite.apk/file' },
-    { name: 'Inshort Premium', iconImg: 'https://apks.urmaxx.in/file/68c110e5b7caea7d40b46816', iconClass: 'instagram', status: 'Free', downloads: '8K+', size: '28MB', version: '2.5', rating: '4.7⭐', downloadUrl: 'https://www.mediafire.com/file/xjvop6dpiy1rf71/InShot_PREMIUM.apk/file' },
-    { name: 'Lite Camera', iconImg: 'https://apks.urmaxx.in/file/68bfc7595d55160765385759', iconClass: 'camera', status: 'Free', downloads: '3K+', size: '12MB', version: '1.8', rating: '4.5⭐', downloadUrl: 'https://www.mediafire.com/file/cyq74z81jq46nh2/Live_Camera.apk/file' },
-    { name: 'Movie Box', iconImg: 'https://apks.urmaxx.in/file/68bd34cb3b4211d73d234ec4', iconClass: 'maps', status: 'Free', downloads: '5K+', size: '22MB', version: '2.2', rating: '4.6⭐', downloadUrl: 'https://www.mediafire.com/file/ntkuxnaw2mw5ofo/MovieBox_.apk/file' },
-    { name: 'Direct Locater', iconImg: 'https://apks.urmaxx.in/file/68b14bd83b4211d73d22be3f', iconClass: 'browser', status: 'Free', downloads: '6K+', size: '24MB', version: '2.3', rating: '4.7⭐', downloadUrl: 'https://www.mediafire.com/file/yjytm7bks4dd3ul/Direct_Locater.apk/file' },
-    { name: 'Ads Remover', iconImg: 'https://apks.urmaxx.in/file/68aa0bcee0dc883df47900f8', iconClass: 'calculator', status: 'Free', downloads: '2K+', size: '5MB', version: '1.0', rating: '4.4⭐', downloadUrl: 'https://www.mediafire.com/file/57xe13xf1v85nb9/Ads_Remove.apk/file' },
-    { name: 'Funsta', iconImg: 'https://apks.urmaxx.in/file/68a0bfe07f236eba23e2dccb', iconClass: 'Fun', status: 'Free', downloads: '4K+', size: '18MB', version: '1.6', rating: '4.8⭐', downloadUrl: 'https://www.mediafire.com/file/884shjrht6bqfwz/Funsta_3.5.3.apk/file' },
+    <script>
+        // Tab Switching Functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.dataset.tab;
 
-    // ADD YOUR NEW APPS BELOW THIS LINE
-    // Example: 
-    // { name: 'Your App Name', iconImg: 'https://image-url.com/icon.png', iconClass: 'your-class', status: 'Free', downloads: '1K+', size: '10MB', version: '1.0', rating: '4.5⭐', downloadUrl: 'https://mediafire.com/your-link' }
-    ,
-    {
-        name: 'Modi ji Mario',
-        iconImg: 'https://i.postimg.cc/SQgYN3JX/images-6.jpg',
-        iconClass: 'whatsapp',
-        status: 'Premium Unlocked',
-        downloads: '10K+',
-        size: '45MB',
-        version: '3.5',
-        rating: '4.9⭐',
-        downloadUrl: 'https://www.mediafire.com/file/gw8gekc8ci5ijkh/Flying+Modi_null.apk/file'
-    },
-    {
-        name: 'MOVIES HUB',
-        iconImg: 'https://i.postimg.cc/HxtbGBGm/images-2.png',
-        iconClass: 'whatsapp',
-        status: 'Premium Unlocked',
-        downloads: '10K+',
-        size: '45MB',
-        version: '3.5',
-        rating: '4.9⭐',
-        downloadUrl: 'https://www.mediafire.com/file/g3u74aflkbpmaep/MOVIES+HUB.apk/file'
-    },
- {
-        name: 'Granny 1 With Grandpa',
-        iconImg: 'data:image/jpeg;base64,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',
-        iconClass: 'Game',
-        status: 'Free',
-        downloads: '1K+ Downloads',
-        size: '185.41MB',
-        version: '1.5',
-        rating: '3.7⭐',
-        downloadUrl: 'https://www.mediafire.com/file/0y7u8gazld8vfp4/Granny_1_With_Grandpa_ZainWarrior/file'
-    },
+                // Update active tab button
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-    {
-        name: 'Lulu Box Modded',
-        iconImg: 'data:image/jpeg;base64,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',
-        iconClass: 'Game',
-        status: 'Free',
-        downloads: '1K+ Downloads',
-        size: '35MB',
-        version: '1.5',
-        rating: '5.7⭐',
-        downloadUrl: 'https://www.mediafire.com/file/jn46w0y0zgquplf/com.lulu.luluboxsuper-206.apk/file'
-    },
+                // Update active tab content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(`${tabName}-content`).classList.add('active');
+            });
+        });
 
-{
-        name: 'REMINI MODDED',
-        iconImg: 'data:image/png;base64,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',
-        iconClass: 'AI',
-        status: 'Premium Unlocked',
-        downloads: '10M+',
-        size: '210MB',
-        version: 'Latest',
-        rating: '7.9⭐',
-        downloadUrl: 'https://www.mediafire.com/file/pejwishn05w79o2/Remini_PRO_v3.7.1156.202517454_Patched_By_EpicModder.apk/file'
-    },
- 
-];
+        // PC Software Data
+        const pcSoftwareData = [
+            {
+                name: 'Mine-Imator 2.0',
+                iconImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPBV1tC0lWKOs7t7i9ooQwzIIcx7Yadov57Q&s',
+                iconClass: 'Software',
+                status: 'Latest Edition',
+                downloads: '10K+',
+                size: '...MB',
+                version: '3.5',
+                rating: '4.9⭐',
+                downloadUrl: 'https://www.mediafire.com/file/hvizwxekmvh5hdr/Mine-imator_2.0.0_installer.exe/file'
+            },
+            // Add more PC software here following the same format
+        ];
 
-// Render apps
-const apksGrid = document.getElementById('apksGrid');
-let currentAppData = null;
+        // App data with download links and images
+        const appsData = [
+            { name: 'Movie Hub', iconImg: 'https://gcdnb.pbrd.co/images/OySCh7NsXyCt.png', iconClass: 'movie-hub', status: 'Premium Unlocked', downloads: '1K+', size: '15MB', version: '1.0', rating: '4.8⭐', downloadUrl: 'https://www.mediafire.com/file/mend2slr0qkqfnj/MOVIES_HUB.apk/file' },
+            { name: 'Play Store', iconImg: 'https://apks.urmaxx.in/file/69071fec8111dbdbc7066f6b', iconClass: 'play-store', status: 'Free', downloads: '5K+', size: '25MB', version: '2.1', rating: '4.5⭐', downloadUrl: 'https://www.mediafire.com/file/8xffaud4jb8fw0x/Play_Store.apk/file' },
+            { name: 'Phone Pay', iconImg: 'https://apks.urmaxx.in/file/69039d751fac4518f62521a5', iconClass: 'phone-pay', status: 'Free', downloads: '3K+', size: '18MB', version: '1.5', rating: '4.7⭐', downloadUrl: 'https://www.mediafire.com/file/83zo0yi2wboq1nf/%25E2%25B1%25A3%25C4%25A6%25C3%2598N%25C9%2586_%25E2%2584%2599%25E1%258E%25AA%25C9%258E.apk/file' },
+            { name: 'INFINITYREDEEM', iconImg: 'https://apks.urmaxx.in/file/68fce9154f36a5ee4317b7f9', iconClass: 'redeem', status: 'Free', downloads: '2K+', size: '12MB', version: '1.2', rating: '4.6⭐', downloadUrl: 'https://www.mediafire.com/file/ulaph2uwnoulqc3/INFINITY_REDEEM.apk/file' },
+            { name: 'ZAIN BOOMBER', iconImg: 'https://apks.urmaxx.in/file/68ed26b0d14885f522de72a9', iconClass: 'boomer', status: 'Free', downloads: '1K+', size: '10MB', version: '1.0', rating: '4.4⭐', downloadUrl: 'https://www.mediafire.com/file/9pp5l27cux9hocm/%25F0%259D%2590%258C%25F0%259D%2590%2580%25F0%259D%2590%2597%25F0%259D%2590%2597_%25F0%259D%2590%2581%25F0%259D%2590%258E%25F0%259D%2590%258C%25F0%259D%2590%2581%25F0%259D%2590%2584%25F0%259D%2590%2591.apk/file' },
+            { name: 'Block Insta', iconImg: 'https://apks.urmaxx.in/file/68e69df850093022932b7276', iconClass: 'block', status: 'Free', downloads: '800+', size: '8MB', version: '1.1', rating: '4.3⭐', downloadUrl: 'https://www.mediafire.com/file/z717ui52snbnuvl/Block_Viewer.apk/file' },
+            { name: 'Gpay', iconImg: 'https://apks.urmaxx.in/file/68deb98550093022932af8ea', iconClass: 'gpay', status: 'Free', downloads: '4K+', size: '20MB', version: '2.0', rating: '4.8⭐', downloadUrl: 'https://www.mediafire.com/file/z3mlobkjchl06wy/GPay.apk/file' },
+            { name: 'Fampay', iconImg: 'https://apks.urmaxx.in/file/68d8fda050093022932a7c90', iconClass: 'epfo', status: 'Free', downloads: '1.5K+', size: '14MB', version: '1.3', rating: '4.5⭐', downloadUrl: 'https://www.mediafire.com/file/98nedip23s084m0/FamPay.apk/file' },
+            { name: 'Jalwa Mod', iconImg: 'https://apks.urmaxx.in/file/68d7876b50093022932a589c', iconClass: 'jalwa', status: 'Free', downloads: '2K+', size: '16MB', version: '1.4', rating: '4.6⭐', downloadUrl: 'https://www.mediafire.com/file/vms3bbg3cbathpt/JALWA_VIP_MOD.apk/file' },
+            { name: 'YouTube Lite', iconImg: 'https://apks.urmaxx.in/file/68cb0edfc5655e4f893a2dc6', iconClass: 'youtube', status: 'Free', downloads: '10K+', size: '30MB', version: '3.0', rating: '4.9⭐', downloadUrl: 'https://www.mediafire.com/file/gkz7lgapcpgqh7x/YouTube_Lite.apk/file' },
+            { name: 'Inshort Premium', iconImg: 'https://apks.urmaxx.in/file/68c110e5b7caea7d40b46816', iconClass: 'instagram', status: 'Free', downloads: '8K+', size: '28MB', version: '2.5', rating: '4.7⭐', downloadUrl: 'https://www.mediafire.com/file/xjvop6dpiy1rf71/InShot_PREMIUM.apk/file' },
+            { name: 'Lite Camera', iconImg: 'https://apks.urmaxx.in/file/68bfc7595d55160765385759', iconClass: 'camera', status: 'Free', downloads: '3K+', size: '12MB', version: '1.8', rating: '4.5⭐', downloadUrl: 'https://www.mediafire.com/file/cyq74z81jq46nh2/Live_Camera.apk/file' },
+            { name: 'Movie Box', iconImg: 'https://apks.urmaxx.in/file/68bd34cb3b4211d73d234ec4', iconClass: 'maps', status: 'Free', downloads: '5K+', size: '22MB', version: '2.2', rating: '4.6⭐', downloadUrl: 'https://www.mediafire.com/file/ntkuxnaw2mw5ofo/MovieBox_.apk/file' },
+            { name: 'Direct Locater', iconImg: 'https://apks.urmaxx.in/file/68b14bd83b4211d73d22be3f', iconClass: 'browser', status: 'Free', downloads: '6K+', size: '24MB', version: '2.3', rating: '4.7⭐', downloadUrl: 'https://www.mediafire.com/file/yjytm7bks4dd3ul/Direct_Locater.apk/file' },
+            { name: 'Ads Remover', iconImg: 'https://apks.urmaxx.in/file/68aa0bcee0dc883df47900f8', iconClass: 'calculator', status: 'Free', downloads: '2K+', size: '5MB', version: '1.0', rating: '4.4⭐', downloadUrl: 'https://www.mediafire.com/file/57xe13xf1v85nb9/Ads_Remove.apk/file' },
+            { name: 'Funsta', iconImg: 'https://apks.urmaxx.in/file/68a0bfe07f236eba23e2dccb', iconClass: 'Fun', status: 'Free', downloads: '4K+', size: '18MB', version: '1.6', rating: '4.8⭐', downloadUrl: 'https://www.mediafire.com/file/884shjrht6bqfwz/Funsta_3.5.3.apk/file' },
 
-function renderApps() {
-    apksGrid.innerHTML = '';
-    appsData.forEach((app, index) => {
-        const card = document.createElement('div');
-        card.className = 'apk-card';
-        card.innerHTML = `
+            // ADD YOUR NEW APPS BELOW THIS LINE
+            // Example: 
+            // { name: 'Your App Name', iconImg: 'https://image-url.com/icon.png', iconClass: 'your-class', status: 'Free', downloads: '1K+', size: '10MB', version: '1.0', rating: '4.5⭐', downloadUrl: 'https://mediafire.com/your-link' }
+            ,
+            {
+                name: 'Modi ji Mario',
+                iconImg: 'https://i.postimg.cc/SQgYN3JX/images-6.jpg',
+                iconClass: 'whatsapp',
+                status: 'Premium Unlocked',
+                downloads: '10K+',
+                size: '45MB',
+                version: '3.5',
+                rating: '4.9⭐',
+                downloadUrl: 'https://www.mediafire.com/file/gw8gekc8ci5ijkh/Flying+Modi_null.apk/file'
+            },
+            {
+                name: 'MOVIES HUB',
+                iconImg: 'https://i.postimg.cc/HxtbGBGm/images-2.png',
+                iconClass: 'whatsapp',
+                status: 'Premium Unlocked',
+                downloads: '10K+',
+                size: '45MB',
+                version: '3.5',
+                rating: '4.9⭐',
+                downloadUrl: 'https://www.mediafire.com/file/g3u74aflkbpmaep/MOVIES+HUB.apk/file'
+            },
+            {
+                name: 'Granny 1 With Grandpa',
+                iconImg: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExMQFRIXEhUVFRMVGBISEBYSFREWFxURGhUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0NFQ0PFSsZFRkrNysrKzc3Kys3KzcrLS0rNys3KysrKysrKysrLSstLSsrLSsrKysrKysrKysrKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQUCAwQGB//EADMQAQABAgMFBgUEAgMAAAAAAAABAhEDITEEQVFh8AUScYGRoSKxwdHxBhMy4UJyFWKi/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECA//EABgRAQEBAQEAAAAAAAAAAAAAAAABETEh/9oADAMBAAIRAxEAPwD4aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYgEDv2bsnFr0ptHGr4WGN2bi060VeMfFHsDjEzCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASCcOiapiIi8zpD03ZexRhxumudZ4coVfYeDeu/CmfWcvu9Js+Eza1IziorzJsypoTWsUnaXZ0V5xlX7T48+agqptNp1e3xcF5ntzZ+7iX3VR7xlP0ajNirEoVkAAAAAAAAAAAAAAAAAAAAAAAAAAAAZQiEwD0X6c0q4zNOfr15vp36j/Q9Oy7FG0TtETiTFE/t5RE962VM3vNon2fLew8X4Kqf+0T7f0sdo2jEmM6pmLb53MtTjCiuZiqVt+jcLBxtow6Nor7mFM/FVpaPHSM1ZgUWonm1YdExOU2Ru8fRP1/2Rsez/tTsuLFcVd7vUxXTXa1rTeNL3n0fMP1NE/Dwi/rP4W1NdV/ilUfqOvKI3Xj5Sus2eKBCUNMAAAAAAAAAAAAAAAAAAAAAAAAAAAACYQAvOwqfhqnn19XdjzPdmzz+w7TNNVMXnu96LxuzymV7j01TlTMR4xdm9bnHNTt1W9v2TGqqnOctzR/x9c/5U+jOjYq6f8AOfKIRpZXVXa/xU1cabZb9Y+8uv8Ad7ton+3n9vxYqxKpjS/yyIzXOhKG2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwsdl7SqyiqfCVazwozFlel2fa436te0bbwyVOBFW7T2bapc298atsxKtc3EsqJ46OfatjmnOLzTPtPBuMVyCUKgAAAAAAAAAAAAAAAAAAAAAAAAAAAA6Nm2OqvSMt9U6N3Zmyd+b1R8Ea854L3DiLZRaI0iIiLeSyCsp2DDp1vVPPKPSGnHwb6RERHBbV036s0V4HD68FsFZTid3Imp01bPny1Y/s5s4uua0uvBqmIznRH7W+3zbaKePPLzzhYjKKaataYnnbdvcmN2dvpnyn7/d1Yd7btdbTbTX2bomLZ55eE36uoocTCmnWJhregxer+P9qrbdm7s3j+M+08EsHIAgAAAAAAAAAAAAAAAAAAAAAAMsOiZmIjWZsxbtl/lHj9AehwsKKKYpjdrzmdZRRVMe3DwasPG70a7zHqtG7PlT6rqtlGLn6x5T+Y9G3F+nPXeqIrziefJZUYkTHh4XtII7szfz48k93rzRNMaZ776Zsq9JBoxZtEZcePHJjTOXlz45N1e/fly3zN2uI168d4FMZWtui17xPWrKqeG/Px4opn5Rxsx72fXW6fU0RV9Pz7w04tV8t39fhury9PK86y5e9fXh6dWBwY1Hdm27d4Nbq2ynSeuTlRAAAAAAAAAAAAAAAAAAAAAABv2Oi8+ETP0+rQsOyKc6p4RHv+AYzjd2Vniz8Mf639/BS7ROc+K+wP40/wCvMVXxH43a9ejpwZ5878evoirB3c+fHw4NuBRaJv8AXjl1zUTRVrMzGvK1uryyqnKYvHtlHWaa9JRfK2/yBjXGU6e3HRqtnbLTl1l9W/du1v8A+mvEtfjly46abwY1fS1svT5+pRh6/PrwRXPWXPMxbx4ffcg4doxLev0Rh1369GO3R85+7VgyDp2im9M+quW2FTnHC/JW7RR3apjnl4bhGsAAAAAAAAAAAAAAAAAAAAABadlR8FfHL2icvdVrXY8sGedU/KAcGLqv8KnKP9eV/uoKc5X2HXaIjP8Ajy4cJFbqKI1t1dHHX34JprjqOUdeSKKovn9et6h1v4MKo3Z+OfBlVVHz4+LDz8swY3nn45+jDFvzz8d/kyq0veeO+eF2nDxcs5n3i0fgCctZm3nNvbq7Z3r263uOm+cTnE6Xvv69m7uzEd2Jm8b+X95g49vhooydG2w5qJyRFvs9u7G/lDg7Ww7V34x8v6s6NjnLz8vBj2nF6YnhPt1YVVgCAAAAAAAAAAAAAAAAAAAAJppvNo1nJZbV8NMUxpb8gDhw4zhf1RkkVYwrxI4Z9cOTbg2mL+HHVADLLPxi087NdFXva2fiAJoqym/WcfNpxJpiM41jPXfICOWJvbre6738AWI4dsp+GJtbX7ODCnMEqu7Y69Y+bbtWdMxvtefIEVUgCAAAAAAAAP/Z',
+                iconClass: 'Game',
+                status: 'Free',
+                downloads: '1K+ Downloads',
+                size: '185.41MB',
+                version: '1.5',
+                rating: '3.7⭐',
+                downloadUrl: 'https://www.mediafire.com/file/0y7u8gazld8vfp4/Granny_1_With_Grandpa_ZainWarrior/file'
+            },
+
+            {
+                name: 'Lulu Box Modded',
+                iconImg: 'data:image/jpeg;base64,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',
+                iconClass: 'Game',
+                status: 'Free',
+                downloads: '1K+ Downloads',
+                size: '35MB',
+                version: '1.5',
+                rating: '5.7⭐',
+                downloadUrl: 'https://www.mediafire.com/file/jn46w0y0zgquplf/com.lulu.luluboxsuper-206.apk/file'
+            },
+
+            {
+                name: 'REMINI MODDED',
+                iconImg: 'data:image/png;base64,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',
+                iconClass: 'AI',
+                status: 'Premium Unlocked',
+                downloads: '10M+',
+                size: '210MB',
+                version: 'Latest',
+                rating: '7.9⭐',
+                downloadUrl: 'https://www.mediafire.com/file/pejwishn05w79o2/Remini_PRO_v3.7.1156.202517454_Patched_By_EpicModder.apk/file'
+            },
+
+        ];
+
+        // Render apps
+        const apksGrid = document.getElementById('apksGrid');
+        let currentAppData = null;
+
+        function renderApps() {
+            apksGrid.innerHTML = '';
+            appsData.forEach((app, index) => {
+                const card = document.createElement('div');
+                card.className = 'apk-card';
+                card.innerHTML = `
             <div class="apk-icon ${app.iconClass}">
                 <img src="${app.iconImg}" alt="${app.name}" onerror="this.style.display='none'">
             </div>
@@ -784,176 +875,214 @@ function renderApps() {
             </div>
             <button class="view-btn" data-index="${index}">View Details</button>
         `;
-        apksGrid.appendChild(card);
-    });
-}
-
-renderApps();
-
-// Modal elements
-const detailsModal = document.getElementById('detailsModal');
-const unlockModal = document.getElementById('unlockModal');
-const detailsCloseBtn = document.getElementById('detailsCloseBtn');
-const unlockCloseBtn = document.getElementById('unlockCloseBtn');
-const downloadModBtn = document.getElementById('downloadModBtn');
-const unlockDownloadBtn = document.getElementById('unlockDownloadBtn');
-
-// Show app details modal
-apksGrid.addEventListener('click', (e) => {
-    if (e.target.classList.contains('view-btn')) {
-        const index = e.target.dataset.index;
-        currentAppData = appsData[index];
-        showDetailsModal(currentAppData);
-    }
-});
-
-function showDetailsModal(app) {
-    const modalIcon = document.getElementById('modalAppIcon');
-    modalIcon.innerHTML = `<img src="${app.iconImg}" alt="${app.name}" onerror="this.style.display='none'">`;
-    modalIcon.className = `app-icon-large ${app.iconClass}`;
-    document.getElementById('modalAppName').textContent = app.name;
-    document.getElementById('modalAppStatus').textContent = app.status;
-    document.getElementById('modalDownloads').textContent = app.downloads;
-    document.getElementById('modalSize').textContent = app.size;
-    document.getElementById('modalVersion').textContent = app.version;
-    document.getElementById('modalRating').textContent = app.rating;
-
-    detailsModal.style.display = 'flex';
-}
-
-// Close details modal
-detailsCloseBtn.addEventListener('click', () => {
-    detailsModal.style.display = 'none';
-});
-
-detailsModal.addEventListener('click', (e) => {
-    if (e.target === detailsModal) {
-        detailsModal.style.display = 'none';
-    }
-});
-
-// Show unlock modal when download button clicked
-downloadModBtn.addEventListener('click', () => {
-    detailsModal.style.display = 'none';
-    unlockModal.style.display = 'flex';
-});
-
-// Close unlock modal
-unlockCloseBtn.addEventListener('click', () => {
-    unlockModal.style.display = 'none';
-});
-
-unlockModal.addEventListener('click', (e) => {
-    if (e.target === unlockModal) {
-        unlockModal.style.display = 'none';
-    }
-});
-
-// Task completion tracking
-let completedTasks = new Set();
-const socialButtons = document.querySelectorAll('.social-btn');
-
-socialButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const task = button.dataset.task;
-
-        // Open social media link
-        const urls = {
-            telegram: 'https://t.me/your_channel',
-            youtube: 'https://youtube.com/@your_channel',
-            telegram2: 'https://t.me/your_second_channel',
-            instagram: 'https://instagram.com/your_profile'
-        };
-
-        window.open(urls[task], '_blank');
-
-        // Mark as completed
-        if (!completedTasks.has(task)) {
-            completedTasks.add(task);
-            button.classList.add('completed');
-            checkAllTasksCompleted();
-        }
-    });
-});
-
-function checkAllTasksCompleted() {
-    if (completedTasks.size === 4) {
-        unlockDownloadBtn.disabled = false;
-        unlockDownloadBtn.classList.add('enabled');
-    }
-}
-
-// Final download
-unlockDownloadBtn.addEventListener('click', () => {
-    if (!unlockDownloadBtn.disabled && currentAppData) {
-        // Open download link
-        if (currentAppData.downloadUrl && currentAppData.downloadUrl !== '#') {
-            window.open(currentAppData.downloadUrl, '_blank');
-
-            // Show success message
-            setTimeout(() => {
-                alert(`${currentAppData.name} download started! Check your downloads folder.`);
-            }, 500);
-        } else {
-            alert(`Download link not available for ${currentAppData.name}`);
+                apksGrid.appendChild(card);
+            });
         }
 
-        // Close modal
-        unlockModal.style.display = 'none';
+        renderApps();
 
-        // Reset for next download
-        completedTasks.clear();
-        socialButtons.forEach(btn => btn.classList.remove('completed'));
-        unlockDownloadBtn.disabled = true;
-        unlockDownloadBtn.classList.remove('enabled');
-    }
-});
+        // Modal elements
+        const detailsModal = document.getElementById('detailsModal');
+        const unlockModal = document.getElementById('unlockModal');
+        const detailsCloseBtn = document.getElementById('detailsCloseBtn');
+        const unlockCloseBtn = document.getElementById('unlockCloseBtn');
+        const downloadModBtn = document.getElementById('downloadModBtn');
+        const unlockDownloadBtn = document.getElementById('unlockDownloadBtn');
 
-// Enhanced Search functionality - searches by name and status
-const searchInput = document.querySelector('.search-input');
+        // Show app details modal
+        apksGrid.addEventListener('click', (e) => {
+            if (e.target.classList.contains('view-btn')) {
+                const index = e.target.dataset.index;
+                currentAppData = appsData[index];
+                showDetailsModal(currentAppData);
+            }
+        });
 
-searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.apk-card');
+        function showDetailsModal(app) {
+            const modalIcon = document.getElementById('modalAppIcon');
+            modalIcon.innerHTML = `<img src="${app.iconImg}" alt="${app.name}" onerror="this.style.display='none'">`;
+            modalIcon.className = `app-icon-large ${app.iconClass}`;
+            document.getElementById('modalAppName').textContent = app.name;
+            document.getElementById('modalAppStatus').textContent = app.status;
+            document.getElementById('modalDownloads').textContent = app.downloads;
+            document.getElementById('modalSize').textContent = app.size;
+            document.getElementById('modalVersion').textContent = app.version;
+            document.getElementById('modalRating').textContent = app.rating;
 
-    if (searchTerm === '') {
-        // Show all cards if search is empty
-        cards.forEach(card => card.style.display = 'block');
-        return;
-    }
+            detailsModal.style.display = 'flex';
+        }
 
-    cards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        const status = card.querySelector('.status').textContent.toLowerCase();
+        // Close details modal
+        detailsCloseBtn.addEventListener('click', () => {
+            detailsModal.style.display = 'none';
+        });
 
-        // Search in both name and status
-        const matches = title.includes(searchTerm) || status.includes(searchTerm);
-        card.style.display = matches ? 'block' : 'none';
-    });
-});
+        detailsModal.addEventListener('click', (e) => {
+            if (e.target === detailsModal) {
+                detailsModal.style.display = 'none';
+            }
+        });
 
-// Pagination dots
-const dots = document.querySelectorAll('.dot');
+        // Show unlock modal when download button clicked
+        downloadModBtn.addEventListener('click', () => {
+            detailsModal.style.display = 'none';
+            unlockModal.style.display = 'flex';
+        });
 
-dots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-    });
-});</script>
+        // Close unlock modal
+        unlockCloseBtn.addEventListener('click', () => {
+            unlockModal.style.display = 'none';
+        });
+
+        unlockModal.addEventListener('click', (e) => {
+            if (e.target === unlockModal) {
+                unlockModal.style.display = 'none';
+            }
+        });
+
+        // Task completion tracking
+        let completedTasks = new Set();
+        const socialButtons = document.querySelectorAll('.social-btn');
+
+        socialButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const task = button.dataset.task;
+
+                // Open social media link
+                const urls = {
+                    telegram: 'https://t.me/your_channel',
+                    youtube: 'https://youtube.com/@your_channel',
+                    telegram2: 'https://t.me/your_second_channel',
+                    instagram: 'https://instagram.com/your_profile'
+                };
+
+                window.open(urls[task], '_blank');
+
+                // Mark as completed
+                if (!completedTasks.has(task)) {
+                    completedTasks.add(task);
+                    button.classList.add('completed');
+                    checkAllTasksCompleted();
+                }
+            });
+        });
+
+        function checkAllTasksCompleted() {
+            if (completedTasks.size === 4) {
+                unlockDownloadBtn.disabled = false;
+                unlockDownloadBtn.classList.add('enabled');
+            }
+        }
+
+        // Final download
+        unlockDownloadBtn.addEventListener('click', () => {
+            if (!unlockDownloadBtn.disabled && currentAppData) {
+                // Open download link
+                if (currentAppData.downloadUrl && currentAppData.downloadUrl !== '#') {
+                    window.open(currentAppData.downloadUrl, '_blank');
+
+                    // Show success message
+                    setTimeout(() => {
+                        alert(`${currentAppData.name} download started! Check your downloads folder.`);
+                    }, 500);
+                } else {
+                    alert(`Download link not available for ${currentAppData.name}`);
+                }
+
+                // Close modal
+                unlockModal.style.display = 'none';
+
+                // Reset for next download
+                completedTasks.clear();
+                socialButtons.forEach(btn => btn.classList.remove('completed'));
+                unlockDownloadBtn.disabled = true;
+                unlockDownloadBtn.classList.remove('enabled');
+            }
+        });
+
+        // Enhanced Search functionality - searches by name and status
+        const searchInput = document.querySelector('.search-input');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.apk-card');
+
+            if (searchTerm === '') {
+                // Show all cards if search is empty
+                cards.forEach(card => card.style.display = 'block');
+                return;
+            }
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const status = card.querySelector('.status').textContent.toLowerCase();
+
+                // Search in both name and status
+                const matches = title.includes(searchTerm) || status.includes(searchTerm);
+                card.style.display = matches ? 'block' : 'none';
+            });
+        });
+
+        // Pagination dots
+        const dots = document.querySelectorAll('.dot');
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+
+        // Render PC Software Grid
+        function renderPCGrid() {
+            const pcGrid = document.getElementById('pcGrid');
+            pcGrid.innerHTML = '';
+
+            pcSoftwareData.forEach((software, index) => {
+                const card = document.createElement('div');
+                card.className = 'apk-card';
+                card.innerHTML = `
+            <div class="apk-icon ${software.iconClass}">
+                ${software.iconImg ? `<img src="${software.iconImg}" alt="${software.name}">` : software.name.charAt(0)}
+            </div>
+            <h3>${software.name}</h3>
+            <p class="status">${software.status}</p>
+            <div class="stats">
+                <span>${software.downloads}</span>
+                <span>${software.size}</span>
+            </div>
+            <button class="view-btn" onclick="showPCDetails(${index})">View</button>
+        `;
+                pcGrid.appendChild(card);
+            });
+        }
+
+        // Show PC Software Details
+        function showPCDetails(index) {
+            const software = pcSoftwareData[index];
+            currentAppData = software;
+
+            // Update modal with software details
+            const modalIcon = document.getElementById('modalAppIcon');
+            modalIcon.className = `app-icon-large ${software.iconClass}`;
+            modalIcon.innerHTML = software.iconImg ?
+                `<img src="${software.iconImg}" alt="${software.name}">` :
+                software.name.charAt(0);
+
+            document.getElementById('modalAppName').textContent = software.name;
+            document.getElementById('modalAppStatus').textContent = software.status;
+            document.getElementById('modalDownloads').textContent = software.downloads;
+            document.getElementById('modalSize').textContent = software.size;
+            document.getElementById('modalVersion').textContent = software.version;
+            document.getElementById('modalRating').textContent = software.rating;
+
+            detailsModal.style.display = 'flex';
+        }
+
+        // Initialize PC Grid on page load
+        renderPCGrid();</script>
     <script src="home-script.js"></script>
 </body>
 
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
