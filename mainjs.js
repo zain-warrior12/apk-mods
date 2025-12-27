@@ -1206,7 +1206,7 @@ const appsData = [
         size: '45MB',
         version: '3.5',
         rating: '4.9⭐',
-        downloadUrl: 'https://www.mediafire.com/file/g3u74aflkbpmaep/MOVIES+HUB.apk/file'
+        downloadUrl: 'https://github.com/haraalu/MoviesHub/releases/download/movieshubv2.1.5d/MOVIESHUBV2.1.5d.apk'
     },
     {
         name: 'Granny 1 With Grandpa',
@@ -1774,4 +1774,5 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         setTimeout(addImageClickHandlers, 300);
     });
 });
+
 
